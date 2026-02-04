@@ -63,13 +63,9 @@ void wyswietl() {
     printf("\n--- LISTA PRZEDMIOTOW (%d) ---\n", ilosc);
     for (int i = 0; i < ilosc; i++) {
         printf("%d. %s | Swiat: %s | Chaos: %d | Status: %s\n",
-            i + 1,
-            baza[i].nazwa,
-            baza[i].swiat,
-            baza[i].chaos,
-            nazwaStabilnosci(baza[i].stabilnosc)
-        );
-        printf("   Opis: %s\n", baza[i].opis);
+            i + 1, baza[i].nazwa, baza[i].swiat, baza[i].chaos,
+            nazwaStabilnosci(baza[i].stabilnosc));
+        printf("    Opis: %s\n", baza[i].opis);
     }
 }
 void usun() {
@@ -107,7 +103,7 @@ void edytuj() {
         if (strcmp(baza[i].nazwa, cel) == 0) {
             printf("Nowy poziom chaosu: ");
             scanf("%d", &baza[i].chaos);
-            printf("Nowa stabilnosc (0-3): ");
+            printf("Nowa stabilnosc (0-Stab, 1-Chwiej, 2-Niestab, 3-Inne): ");
             scanf("%d", &baza[i].stabilnosc);
             getchar();
             printf("Zaktualizowano!\n");
